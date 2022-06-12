@@ -13,18 +13,27 @@ const sumTwo = (nums, target) => {
   let length = nums.length;
 
   for (let i = 0; i < length; i++) {
+
     let currentNumber = nums[i]
     let perfectMatch = target - currentNumber
+    // If there's a number that exists in the object that
+    // can add up to the target with current number, we
+    // return our solution
     if (map[perfectMatch] !== undefined) {
       return [map[perfectMatch], i]
     }
+    // Else, we just store it.
     else {
       map[currentNumber] = i
     }
+
   }
 }
 
 console.log(sumTwo([1, 5, 9, 10], 14))
+// The complexity of this solution is O(n). Because with the
+// object, we can access the values quicker but it is still
+// proportional to how large the array is 
 
 /////////////////////////////////////////////////
 
@@ -41,7 +50,7 @@ const twoSum = (nums, target) => {
 
 }
 
-console.log(twoSum([1, 5, 9, 10], 19))
+// console.log(twoSum([1, 5, 9, 10], 19))
 
 // The complexity for this solution is O(n^2) because of the nested
 // for loop.
