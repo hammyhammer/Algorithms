@@ -4,4 +4,7 @@
 
 const twoSum = (nums, target) => {
 
+
 }
+
+twoSum([1, 5, 10], 15)
