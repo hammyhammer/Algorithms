@@ -3,14 +3,23 @@
 // target sum. 
 
 const sumTwo = (nums, target) => {
-  let complementary = new Map();
+  // We create an object to store and then access the 
+  // numbers quickly.
+  let map = {};
 
-  for (let i = 0; i < nums.target; i++) {
-    if (complementary[nums[i]] >= 0) {
-      return [complementary[nums[i]], i]
+  // We create a variable for the length of the array
+  // Because it helps with the time complex a little. We
+  // do lose some space complexity though. 
+  let length = nums.length;
+
+  for (let i = 0; i < length; i++) {
+    let currentNumber = nums[i]
+    let perfectMatch = target - currentNumber
+    if (map[perfectMatch] !== undefined) {
+      return [map[perfectMatch], i]
     }
     else {
-      complementary[target - nums[i]] = i
+      map[currentNumber] = i
     }
   }
 }
