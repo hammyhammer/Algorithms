@@ -1,4 +1,4 @@
-// Given a sorted array, count the unqiue values in the array.
+// Given a *sorted* array, count the unqiue values in the array.
 
 const countUniqueValues = (array) => {
   // We create a empty object.
@@ -33,13 +33,21 @@ const countUniqueValues = (array) => {
 
 const recordUniqueValues = (array) => {
   let i = 0;
+  // We declare our variable i to 0 and j to 1 to represent
+  // the indices of the array.
   for (let j = 1; j < array.length; j++) {
+    // if i is not equal to j, we change the element to increment
+    // by one. 
     if (array[i] !== array[j]) {
       i++
       array[i] = array[j]
     }
   }
+  // We return i + 1 because j will be on the last element in
+  // the array. 
   return i + 1;
 }
 
+// The complexity for this solution would be O(n) because we 
+// still need to go through the entire array. 
 console.log(recordUniqueValues([1, 1, 2, 3, 3, 4, 5]))
