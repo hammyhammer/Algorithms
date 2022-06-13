@@ -27,4 +27,19 @@ const countUniqueValues = (array) => {
 // The compexity for this solution would be O(n), because we still
 // have to go through th entire array to ensure we get all the
 // values. 
-console.log(countUniqueValues([1, 1, 2, 3, 4, 5, 6, 6]))
+// console.log(countUniqueValues([]))
+
+//////////////////////////////////////////////////////////
+
+const recordUniqueValues = (array) => {
+  let i = 0;
+  for (let j = 1; j < array.length; j++) {
+    if (array[i] !== array[j]) {
+      i++
+      array[i] = array[j]
+    }
+  }
+  return i + 1;
+}
+
+console.log(recordUniqueValues([1, 1, 2, 3, 3, 4, 5]))
