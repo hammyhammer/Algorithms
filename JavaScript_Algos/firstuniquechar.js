@@ -28,4 +28,6 @@ const firstUniqueChar = (string) => {
   return -1
 }
 
+// The complexity would be O(n) because we have to go through the whole string
+
 console.log(firstUniqueChar('hello'))
