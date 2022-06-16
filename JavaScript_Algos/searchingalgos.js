@@ -32,14 +32,23 @@ const binarySearch = (array, value) => {
   let middle = Math.floor((start + end) / 2);
 
   while (array[middle] !== value && start <= end) {
+    // If the value is less than the middle, we reinitialize end
+    // to be middle minus one, because we know it cannot be beyond
+    // the middle value or the middle value itself. 
     if (value < array[middle]) {
       end = middle - 1;
     }
+
+    // If the value is greater than middle, we bring the start up
+    // to the middle so we can focus of the second half of the array.
     else {
       start = middle + 1;
     }
     middle = Math.floor((start + end) / 2);
   }
+
+  // If the middle is equal to value, then we chopped down
+  // the sorted array down to the  last possible value (if it is there).
   if (array[middle] === value) {
     return middle
   }
