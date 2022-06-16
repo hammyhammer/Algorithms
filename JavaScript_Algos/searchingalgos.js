@@ -21,5 +21,15 @@ console.log(linearSearch([1, 2, 3, 4, 5, 6], 7))
 // parts of the array that we do not care about. 
 // **This way only works for sorted arrays** 
 const binarySearch = (array, value) => {
+  // The start variable reflects index 0 of the array
+  let start = 0;
+
+  // The end variable reflects the last index of the array
+  let end = array.length - 1;
+
+  // We utilize Math.floor to round down a decimal result.
+  // (In the event that the array has an even number of elements)
+  let middle = Math.floor((start + end) / 2);
+
 
 }
