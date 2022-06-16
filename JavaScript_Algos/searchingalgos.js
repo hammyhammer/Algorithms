@@ -55,4 +55,10 @@ const binarySearch = (array, value) => {
   return -1
 }
 
+// The complexity of binary search is O(log n) because we are 
+// not goingthrough every single element to find our value
+// but rather we are chopping the array in selections we care about
+
+
+
 console.log(binarySearch([1, 2, 4, 6, 8, 10, 14, 18, 21], 7))
