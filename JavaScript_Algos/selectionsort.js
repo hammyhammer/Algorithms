@@ -19,3 +19,7 @@ function selectionSort(array) {
 }
 
 console.log(selectionSort([34, 22, 10, 19, 17]))
+
+// The time complexity for selection sort is O(n^2) because
+// of the nested loops. We are comparing individual values to one another
+// and do not make a swap until we reach the end for an iteration. 
