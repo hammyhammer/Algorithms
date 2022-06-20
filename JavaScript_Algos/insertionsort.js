@@ -13,3 +13,5 @@ function insertionSort(array) {
 }
 
 console.log(insertionSort([2, 1, 9, 34, 4]))
+
+//complexity for insertion sort would be O(n^2) because of the nested loops
