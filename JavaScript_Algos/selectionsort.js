@@ -6,11 +6,14 @@
 function selectionSort(array) {
   for (let i = 0; i < array.length; i++) {
     let lowest = i;
+    // We set J to i + 1 because we want to look at the value 'ahead' of
+    // whatever i may be. 
     for (let j = i + 1; j < array.length; j++) {
       if (array[j] < array[lowest]) {
         lowest = j;
       }
     }
+    // Swapping
     let temp = array[i]
     array[i] = array[lowest]
     array[lowest] = temp
