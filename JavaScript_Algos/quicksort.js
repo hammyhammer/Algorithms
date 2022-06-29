@@ -1,5 +1,3 @@
-// 
-
 function pivot(array, start = 0, end = array.length - 1) {
 
   function swap(array, i, j) {
@@ -43,4 +41,8 @@ function quickSort(array, left = 0, right = array.length - 1) {
 }
 
 console.log(quickSort([4, 8, 2, 1, 5, 7, 6, 3]))
+
+// The complexity would O(n log n) because we are making "slices" to
+// the array. 
+// This is not a good sorting algo for an already sorted array
 
