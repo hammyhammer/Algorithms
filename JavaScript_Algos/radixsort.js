@@ -12,4 +12,12 @@ function digitCount(number) {
   return Math.floor(Math.log10(Math.abs(number))) + 1;
 }
 
+function mostDigits(nums) {
+  let maxDigits = 0;
+  for (let i = 0; i < nums.length; i++) {
+    maxDigits = Math.max(maxDigits, digitCount(nums[i]))
+  }
+  return maxDigits;
+}
+
 console.log(getDigit(7323, 2))
