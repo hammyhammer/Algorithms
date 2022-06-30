@@ -18,9 +18,14 @@ class Student {
     this.scores.push(score)
     return this.scores
   }
+
   calculateAverage() {
     let sum = this.scores.reduce(function (a, b) { return a + b })
     return sum / this.scores.length;
+  }
+
+  static enrollStudents() {
+    return 'Enrolling Students'
   }
 }
 
@@ -35,3 +40,6 @@ secondStudent.addScore(93)
 // console.log(firstStudent.firstName)
 // console.log(firstStudent.markLate())
 console.log(secondStudent.calculateAverage())
+
+
+
