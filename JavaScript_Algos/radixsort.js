@@ -38,3 +38,6 @@ function radixSort(nums) {
 }
 
 console.log(radixSort([7323, 2]))
+
+//Complexity is O(nk). n is the length of the array while k is the 
+//length of the individual numbers
