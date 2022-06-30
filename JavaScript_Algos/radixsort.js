@@ -21,7 +21,20 @@ function mostDigits(nums) {
 }
 
 function radixSort(nums) {
+  // mostDigits will determine what largest number(s) has how
+  // many digits
   let maxDigitCount = mostDigits(nums)
+
+  for (let k = 0; k < maxDigitCount; k++) {
+    // Making the digit buckets. Making ten buckets
+    let digitBuckets = Array.from({ length: 10 }, () => [])
+    for (let i = 0; i < nums.length; i++) {
+      let digit = getDigit(nums[i], k)
+      digitBuckets[digit].push(nums[i])
+    }
+    nums = [].concat(...digitBuckets)
+  }
+  return nums
 }
 
-console.log(getDigit(7323, 2))
+console.log(radixSort([7323, 2]))
