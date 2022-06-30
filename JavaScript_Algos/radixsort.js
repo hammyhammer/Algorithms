@@ -20,4 +20,8 @@ function mostDigits(nums) {
   return maxDigits;
 }
 
+function radixSort(nums) {
+  let maxDigitCount = mostDigits(nums)
+}
+
 console.log(getDigit(7323, 2))
