@@ -42,19 +42,34 @@ class SinglyLinkedList {
     this.tail = newTail;
     this.tail.next = null;
     this.length--
+    if (this.length === 0) {
+      this.head = null;
+      this.tail = null;
+    }
     return current;
-
   }
 
+  shift() {
+    if (!this.head) return undefined;
+    let currentHead = this.head;
+    this.head = currentHead.next;
+    this.length--;
+    return currentHead;
+  }
 
+  unshift() {
+    let newNode = new Node.value;
+    if (!head) {
+      this.head = newNode;
+      this.tail = this.head;
+    } else {
+      newNode.next = this.head;
+      this.head = newNode;
+      this.length++;
+      return this
+    }
+  }
 
-  // tranverse() {
-  //   let current = this.head;
-  //   while (current) {
-  //     console.log(current.val)
-  //     current = current.next
-  //   }
-  // }
 }
 
 //This method below is not optimal because of all the .next.next
@@ -63,7 +78,9 @@ first.next = new Node('there')
 first.next.next = new Node('Anakin')
 first.next.next.next = new Node('Skywalker')
 
-//
+// this is what we want to aim for. 
 let list = new SinglyLinkedList()
 list.push('Hello')
 list.push('THere')
+
+console.log(list)
