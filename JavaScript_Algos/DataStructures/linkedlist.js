@@ -79,6 +79,8 @@ class SinglyLinkedList {
       counter++
     }
     return current
+    // Complexity = O(n)
+
   }
 
   set(index, value) {
@@ -102,6 +104,7 @@ class SinglyLinkedList {
     newNode.next = temp
     this.length++
     return true;
+    // Complexity = O(1)
   }
 
   remove(index) {
@@ -114,6 +117,8 @@ class SinglyLinkedList {
     previousNode.next = removed.next
     this.length--
     return removed;
+    // Complexity = O(1) or O(n)
+
   }
 
   reverse() {
