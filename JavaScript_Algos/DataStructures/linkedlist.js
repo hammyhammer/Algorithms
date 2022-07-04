@@ -90,6 +90,33 @@ class SinglyLinkedList {
     return false
   }
 
+  insert(index, value) {
+    if (index < 0 || index > this.length) return false;
+    if (index === this.legnth) return !!this.push(value);
+    if (index === 0) return !!this.unshift(value);
+
+    let newNode = new Node(value)
+    let previous = this.get(index - 1);
+    let temp = previous.next;
+    previous.next = newNode;
+    newNode.next = temp
+    this.length++
+    return true;
+  }
+
+  remove(index) {
+    if (index < 0 || index >= this.length) return undefined;
+    if (index === 0) return this.shift();
+    if (index === this.length - 1) return this.pop();
+
+    let previousNode = this.get(index - 1)
+    let removed = previousNode.next;
+    previousNode.next = removed.next
+    this.length--
+    return removed;
+  }
+
+
 }
 
 //This method below is not optimal because of all the .next.next
