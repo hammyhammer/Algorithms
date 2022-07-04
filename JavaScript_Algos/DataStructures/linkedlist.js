@@ -70,6 +70,26 @@ class SinglyLinkedList {
     }
   }
 
+  get(index) {
+    if (index < 0 || index >= this.length) return null;
+    let counter = 0;
+    let current = this.head;
+    while (counter !== index) {
+      current = current.next
+      counter++
+    }
+    return current
+  }
+
+  set(index, value) {
+    let foundNode = this.get(index)
+    if (foundNode) {
+      foundNode.value = value;
+      return true
+    }
+    return false
+  }
+
 }
 
 //This method below is not optimal because of all the .next.next
