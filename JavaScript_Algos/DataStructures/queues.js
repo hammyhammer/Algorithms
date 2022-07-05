@@ -55,3 +55,9 @@ qt.enqueue(5)
 qt.enqueue(2)
 qt.dequeue()
 console.log(qt)
+
+// Complexity:
+// Insertion = O(1)
+// Removal = O(1)
+// Searching = O(N)
+// Access = O(N)
