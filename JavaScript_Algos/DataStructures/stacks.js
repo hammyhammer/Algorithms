@@ -56,3 +56,9 @@ stack2.push(3)
 stack2.push(5)
 stack2.pop()
 console.log(stack2)
+
+// Complexity:
+// Insertion = O(1)
+// Removal = O(1)
+// Search = O(N)
+// Access = O(N) 
