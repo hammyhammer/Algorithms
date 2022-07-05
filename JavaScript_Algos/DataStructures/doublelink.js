@@ -76,6 +76,7 @@ class DoublyLinkedList {
     return this
   }
 
+  // Get Complexity: O(n)
   get(index) {
     if (index < 0 || index >= this.length) return null;
     let count, current;
@@ -98,6 +99,7 @@ class DoublyLinkedList {
   }
 
   // Updating node
+  // Set Complexity: O(n)
   set(index, val) {
     let foundNode = this.get(index);
     if (foundNode !== null) {
@@ -107,6 +109,7 @@ class DoublyLinkedList {
     return false;
   }
 
+  // Insertion Complexity: O(1)
   insert(index, val) {
     if (index < 0 || index >= this.length) return false;
     if (index === 0) return !!this.unshift(val);
@@ -124,6 +127,7 @@ class DoublyLinkedList {
     return true
   }
 
+  // Remove complexity: O(1)
   remove(index) {
     if (index < 0 || index >= this.length) return false;
     if (index === 0) return this.shift();
