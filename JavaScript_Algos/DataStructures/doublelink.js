@@ -44,11 +44,43 @@ class DoublyLinkedList {
     this.length--
     return poppedNode
   }
+
+  //Shift (removing from the beginning)
+  shift() {
+    if (this.length === 0) return undefined;
+    let oldHead = this.head;
+    if (this.length === 1) {
+      this.head = null;
+      this.tail = null;
+    } else {
+      this.head = oldHead.next;
+      this.head.prev = null;
+      oldHead.next = null;
+
+    }
+    this.length--
+    return oldHead
+  }
+  // Adding a node at the beginning
+  unshift(val) {
+    let newNode = new Node(val);
+    if (this.length === 0) {
+      this.head = newNode;
+      this.tail = newNode;
+    } else {
+      this.head.prev = newNode;
+      newNode.next = this.head;
+      this.head = newNode
+    }
+    this.length++
+    return this
+  }
 }
 
 let list = new DoublyLinkedList()
-list.push(1)
-list.push(2)
-list.push(3)
-list.pop()
+list.push("Bob")
+list.push("Tim")
+list.push("Dan")
+list.unshift('Robert')
+
 console.log(list)
