@@ -15,13 +15,22 @@ class BinarySearchTree {
 
   insert(value) {
     let newNode = new Node(value);
+
+    // If there is no binary tree. Set the root to the value. 
     if (this.root === null) {
       this.root = newNode;
       return this
-    } else {
+    }
+
+    else {
       let current = this.root;
       while (true) {
+
+        // If there is a duplicate, we will return undefined;
         if (value === current.value) return undefined;
+
+        // For the left side of the tree. If the value is less than the current (which starts at root)
+        // We will direct the value to go left. 
         if (value < current.value) {
           if (current.left === null) {
             current.left = newNode
@@ -29,6 +38,9 @@ class BinarySearchTree {
           } else {
             current = current.left
           }
+
+          // For the right side of the tree. If the value is more than the current (which starts at root)
+          // We will direct the value to go right. 
         } else if (value > current.value) {
           current.right = newNode;
           return this
