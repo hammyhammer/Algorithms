@@ -52,13 +52,18 @@ class BinarySearchTree {
   }
 
   find(value) {
+    // If there is no root, then there is no tree
     if (this.root === null) return false;
     let current = this.root;
     let found = false;
     while (current && !found) {
+
+      // If the value is less than current value, go left in the tree
       if (value < current.value) {
         current = current.left;
-      } else if (value > current.value) {
+      }
+      // If the value is more than current value, go right in the tree
+      else if (value > current.value) {
         current = current.right
       } else {
         found = true;
@@ -90,3 +95,6 @@ tree.insert(7);
 console.log(tree.find(999))
 // console.log(tree)
 
+// Both searching and insertion has a complexity of O(log n). Pretty solid. 
+// But not guaranteed. It is all dependent on the composition of the tree. It could
+// have a singly linked list look where it is just all one sided in a straight line
