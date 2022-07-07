@@ -67,6 +67,9 @@ class MaxBinaryHeap {
 
 }
 
+// Complexity for Insertion and Remove is O(log n)
+// Searching is O(n)
+
 let heap = new MaxBinaryHeap()
 heap.insert(55)
 heap.insert(13)
