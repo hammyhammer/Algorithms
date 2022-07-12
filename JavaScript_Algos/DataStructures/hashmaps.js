@@ -8,3 +8,4 @@ function hash(key, arrayLen) {
 }
 
 console.log(hash('Pink', 10))
+
