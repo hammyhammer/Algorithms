@@ -71,6 +71,28 @@ class Graph {
     }
     return result
   }
+
+  breadthFirst(start) {
+    let queue = [start]
+    let result = []
+    let visited = {}
+    let currentVertex;
+    visited[start] = true
+
+    while (queue.length) {
+      currentVertex = queue.shift
+      result.push(currentVertex)
+
+      this.adjacencyList[currentVertex].forEach(neighbor => {
+        if (!visited) {
+          visited[neighbor] = true
+          queue.push(neighbor)
+        }
+      })
+    }
+    return result
+
+  }
 }
 
 let graph = new Graph();
