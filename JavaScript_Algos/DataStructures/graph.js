@@ -50,6 +50,27 @@ class Graph {
     return result
 
   }
+  depthFirstIterative(start) {
+    const stack = [start];
+    const result = [];
+    const visited = {};
+    let currentVertex;
+
+    visited[start] = true;
+    while (stack.length) {
+      console.log(stack)
+      currentVertex = stack.pop();
+      result.push(currentVertex)
+
+      this.adjacencyList[currentVertex].forEach(neighbor => {
+        if (!visited[neighbor]) {
+          visited[neighbor] = true
+          stack.push(neighbor)
+        }
+      })
+    }
+    return result
+  }
 }
 
 let graph = new Graph();
@@ -70,4 +91,5 @@ graph.addEdge("D", "F")
 graph.addEdge("E", "F")
 
 // console.log(graph)
-console.log(graph.depthFirstRecursive("A"))
+// console.log(graph.depthFirstRecursive("A"))
+console.log(graph.depthFirstIterative("A"))
