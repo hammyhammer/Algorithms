@@ -29,5 +29,7 @@ let mostFrequentEven = (nums) => {
   // If final is 0 or greater, return it. Else we will return -1 in the event there are no even numbers at all.
   return Number(final) >= 0 ? final : -1
 }
+// Time complexity: O(n). We have to go through the entire array of nums to see what numbers are even.
+// Also, we going through the entire count object as well to see what key has a value larger than max.
 
 mostFrequentEven([1, 2, 3, 2, 2, 4, 4, 5, 9])
