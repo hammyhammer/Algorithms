@@ -1,0 +1,26 @@
+// Most Frequent Even Element.
+
+// Return the smallest even number that appears most frequently. 
+
+let mostFrequentEven = (nums) => {
+  let count = {}
+
+  let final
+  let max = 0
+
+  for (let char of nums) {
+    if (char % 2 === 0) {
+      count[char] = count[char] + 1 || 1
+    }
+  }
+
+  for (let keys in count) {
+    if (count[keys] > max) {
+      max = count[keys]
+      final = keys
+    }
+  }
+  return Number(final) >= 0 ? final : -1
+}
+
+mostFrequentEven([1, 2, 3, 2, 2, 4, 4, 5, 9])
