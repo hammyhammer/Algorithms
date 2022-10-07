@@ -30,4 +30,7 @@ let topKFrequent = function (nums, k) {
   return results
 };
 
+// Time Complexity: O(n) because we have to go through the nums array to count. 
+// However we are sorting so for larger entries it could O(n log n). For smaller arrays it could be O(n)
+
 console.log(topKFrequent([3, 3, 4, 5, 1, 1, 1, 2, 2, 3], 2))
